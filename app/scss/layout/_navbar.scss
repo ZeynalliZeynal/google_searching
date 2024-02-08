@@ -4,41 +4,43 @@
 
 header {
   padding: 10px;
-  &#home-header {
-    nav {
-      .banner {
-        color: white;
-        font-size: 14px;
-        height: 48px;
-        @include flexbox(center, center, wrap, 1rem);
+  nav {
+    .banner {
+      color: white;
+      font-size: 14px;
+      height: 48px;
+      @include flexbox(center, center, wrap, 1rem);
 
-        &__links {
-          gap: 10px;
+      &__links {
+        gap: 10px;
 
-          a:hover {
-            text-decoration: underline;
-          }
+        a:hover {
+          text-decoration: underline;
         }
-        &__more {
-          &__btn {
-            button {
-              width: 40px;
-              height: 40px;
+      }
+      &__more {
+        &__btn {
+          button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            span {
+              overflow: hidden;
               border-radius: 50%;
-              span {
-                overflow: hidden;
-                border-radius: 50%;
-              }
-              &:hover {
-                background-color: $item-hover;
-              }
             }
+            &:hover {
+              background-color: $item-hover;
+            }
+          }
+          &.settings button {
+            padding: 0.5rem;
           }
         }
       }
     }
   }
   &#search-header {
+    border-bottom: $default-border;
     .form-nav {
       height: 70px;
       &__left {
@@ -52,6 +54,7 @@ header {
           mask-repeat: no-repeat;
         }
         .search-bar {
+          width: 692px;
           background-color: $input-bg;
           &:hover {
             box-shadow: 0 4px 12px rgba(23, 23, 23, 0.9);
@@ -68,6 +71,33 @@ header {
               mask-position: center;
             }
           }
+        }
+      }
+    }
+    .filter-nav {
+      padding: 0 0 16px 200px;
+      &__basic {
+        gap: 6px;
+      }
+      &__advanced {
+        gap: 6px;
+
+        li:first-child {
+          position: relative;
+          &::after {
+            @include before_after('', 1px, 20px, #3c4043);
+            @include position(absolute, $top: 50%, $right: -3px);
+            transform: translateY(-50%);
+          }
+        }
+      }
+      .filter-btn--secondary {
+        border: none;
+        border-radius: 0.5rem;
+        color: #9aa0a6;
+        font-size: 14px;
+        .filter-btn__icon {
+          display: inherit;
         }
       }
     }

@@ -1,3 +1,33 @@
 @use '../utils/variable' as *;
 @use '../utils/mixin' as *;
 @use '../utils/extend' as *;
+
+.filter-btn {
+  gap: 6px;
+  border-radius: 20px;
+  color: white;
+  border: $default-border;
+  min-width: 30xp;
+  height: 40px;
+  padding: 0 14px;
+
+  &__icon {
+    display: none;
+    font-size: 12px;
+  }
+  &:hover {
+    background-color: $item-hover;
+  }
+
+  &.active-btn {
+    background: #394457;
+    border-color: #394457;
+    color: #8ab4f8;
+    .filter-btn__icon {
+      display: inherit;
+    }
+    &:hover {
+      background-color: #2a4165;
+    }
+  }
+}
