@@ -579,6 +579,9 @@ header nav .banner__links {
 header nav .banner__links a:hover {
   text-decoration: underline;
 }
+header nav .banner__more {
+  justify-content: flex-end;
+}
 header nav .banner__more__btn button {
   width: 40px;
   height: 40px;
@@ -604,9 +607,8 @@ header#search-header .form-nav__left {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 2.8rem;
-  margin-left: 4rem;
 }
 header#search-header .form-nav__left__logo {
   width: 92px;
@@ -630,9 +632,6 @@ header#search-header .form-nav__left .search-bar__other-icons__search {
   mask-repeat: no-repeat;
   background-color: #8ab4f8;
   mask-position: center;
-}
-header#search-header .filter-nav {
-  padding: 0 0 16px 200px;
 }
 header#search-header .filter-nav__basic {
   gap: 6px;

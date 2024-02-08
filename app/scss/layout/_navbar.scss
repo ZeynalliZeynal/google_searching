@@ -19,6 +19,7 @@ header {
         }
       }
       &__more {
+        justify-content: flex-end;
         &__btn {
           button {
             width: 40px;
@@ -44,8 +45,8 @@ header {
     .form-nav {
       height: 70px;
       &__left {
-        @include flexbox(center, flex-start, wrap, 2.8rem);
-        margin-left: 4rem;
+        @include flexbox(center, flex-start, nowrap, 2.8rem);
+        // margin-left: 4rem;
         &__logo {
           width: 92px;
           height: 30px;
@@ -75,7 +76,7 @@ header {
       }
     }
     .filter-nav {
-      padding: 0 0 16px 200px;
+      // padding: 0 0 16px 210px;
       &__basic {
         gap: 6px;
       }
