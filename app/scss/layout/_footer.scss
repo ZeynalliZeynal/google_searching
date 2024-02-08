@@ -1,0 +1,21 @@
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
+@use '../utils/extend' as *;
+
+footer {
+  .customize-theme {
+    padding: 1rem;
+    button {
+      width: 2rem;
+      height: 2rem;
+
+      background-color: $pen-bg;
+
+      border-radius: 50%;
+      transition: none;
+      &:hover {
+        background-color: $pen-hover;
+      }
+    }
+  }
+}

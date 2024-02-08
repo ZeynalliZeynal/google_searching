@@ -1,0 +1,23 @@
+@use './function';
+
+$default-ff: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// Colors
+$bluish-gray: #5f6368ff;
+
+$item-hover: #ffffff1a;
+$pen-bg: #00000099;
+$pen-hover: #fffbff1a;
+
+// Font-sizes
+$fs-100: 12px;
+$fs-200: 14px;
+$fs-300: 20px;
+$fs-400: 24px;
+$fs-500: 28px;
+$fs-600: 48px;
+
+$h1-fs: $fs-600;
+
+// Border radius
+$default-br: 1.3rem;

@@ -1,0 +1,126 @@
+$screen: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+);
+$container: (
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1320px,
+);
+
+// [class^='container'] > *,
+[class^='container'] {
+  height: 100%;
+}
+
+.container,
+.container-fluid {
+  // For container queries
+  container-type: inline-size;
+
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.container-fluid {
+  max-width: 100%;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  /* margin: 0 -15px; */
+}
+
+/***** Custom Classes *****/
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+.flex-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-space-between {
+  justify-content: space-between !important;
+}
+.justify-end {
+  justify-content: flex-end !important;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-stretch {
+  align-items: stretch;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.absolute {
+  position: absolute;
+}
+.flex-auto {
+  flex: auto;
+}
+.border-0 {
+  border-color: transparent !important;
+}
+.br-circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.d-none {
+  display: none;
+}
+/***** End Custom Classes *****/
+
+/***** Grid *****/
+
+[class^='col-'] {
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media screen and (width < 576px) {
+  .container {
+    max-width: auto;
+  }
+  @for $col from 1 through 12 {
+    .col-#{$col} {
+      width: calc(100% / 12 * $col);
+    }
+  }
+}
+
+@each $size, $width in $screen {
+  @media screen and (width >= $width) {
+    .container {
+      max-width: map-get($map: $container, $key: $size);
+    }
+    @for $col from 1 through 12 {
+      .col-#{$size}-#{$col} {
+        width: calc(100% / 12 * $col);
+      }
+    }
+  }
+}
