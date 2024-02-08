@@ -3,37 +3,41 @@
 @use '../utils/extend' as *;
 
 header {
-  nav {
-    .banner {
-      padding: 10px;
-      color: white;
-      font-size: 14px;
-      height: 48px;
-      @include flexbox(center, center, wrap, 1rem);
+  padding: 10px;
+  &#home-header {
+    nav {
+      .banner {
+        color: white;
+        font-size: 14px;
+        height: 48px;
+        @include flexbox(center, center, wrap, 1rem);
 
-      &__links {
-        gap: 10px;
+        &__links {
+          gap: 10px;
 
-        a:hover {
-          text-decoration: underline;
+          a:hover {
+            text-decoration: underline;
+          }
         }
-      }
-      &__more {
-        &__btn {
-          button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            span {
-              overflow: hidden;
+        &__more {
+          &__btn {
+            button {
+              width: 40px;
+              height: 40px;
               border-radius: 50%;
-            }
-            &:hover {
-              background-color: $item-hover;
+              span {
+                overflow: hidden;
+                border-radius: 50%;
+              }
+              &:hover {
+                background-color: $item-hover;
+              }
             }
           }
         }
       }
     }
+  }
+  &#search-header {
   }
 }

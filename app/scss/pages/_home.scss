@@ -1,8 +1,8 @@
-@use '../../utils/variable' as *;
-@use '../../utils/mixin' as *;
-@use '../../utils/extend' as *;
+@use '../utils/variable' as *;
+@use '../utils/mixin' as *;
+@use '../utils/extend' as *;
 
-body {
+body#home {
   @include bg-img(cover, no-repeat, center);
   display: grid;
   align-content: space-between;
@@ -22,43 +22,7 @@ body {
         margin: 0 auto;
       }
     }
-    &__search-bar {
-      @include flexbox(center, space-between, wrap, 6px);
-      background-color: white;
-      padding-inline: 20px;
-      border-radius: 22px;
-      width: 560px;
-      box-shadow: 0 2px 6px 0 #20212451;
-      &__search-icon {
-        mask-size: 100%;
-        mask-repeat: no-repeat;
-        background-color: $bluish-gray;
-        width: 24px;
-        height: 24px;
-      }
-      &__input {
-        flex-grow: 1;
 
-        input {
-          &:focus {
-            &::placeholder {
-              color: transparent;
-            }
-          }
-          &::placeholder {
-            color: $bluish-gray;
-          }
-        }
-      }
-      &__other-icons {
-        gap: 0.5rem;
-        button {
-          @include bg-img(21px 21px, no-repeat, center);
-          width: 26px;
-          height: 44px;
-        }
-      }
-    }
     &__tiles {
       margin-top: 1rem;
       display: grid;

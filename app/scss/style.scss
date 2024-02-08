@@ -8,6 +8,8 @@
 @forward './common/common';
 @forward './components/button';
 @forward './components/modal';
+@forward './components/searchInput';
 @forward './layout/navbar';
 @forward './layout/footer';
-@forward './pages/home/hero';
+@forward './pages/home';
+@forward './pages/result';

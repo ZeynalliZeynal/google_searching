@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Tab</title>
+
+    <link
+      rel="shortcut icon"
+      href="./app/assets/icon/google.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <link rel="stylesheet" href="./dist/css/style.css" />
+  <script defer src="./app/js/results.js" type="module"></script>
+  <body id="results">
+    <header id="search-header">
+      <nav class="form-nav">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="form-nav__left">
+              <div
+                class="form-nav__left__logo"
+                style="mask-image: url('./app/assets/image/google_logo.svg')"
+              ></div>
+              <form action="#" class="search-bar">
+                <span
+                  class="search-bar__search-icon"
+                  style="mask-image: url('./app/assets/icon/icon_search.svg')"
+                ></span>
+                <span class="search-bar__input">
+                  <input
+                    type="search"
+                    placeholder="Search Google or type a URL"
+                  />
+                </span>
+                <ul class="search-bar__other-icons">
+                  <li>
+                    <button
+                      class="search-bar__other-icons__mic"
+                      style="
+                        background-image: url('./app/assets/icon/googlemic.svg');
+                      "
+                      title="Search by voice"
+                    ></button>
+                  </li>
+                  <li>
+                    <button
+                      class="search-bar__other-icons__lens"
+                      style="
+                        background-image: url('./app/assets/icon/lens_icon.svg');
+                      "
+                      title="Search by image"
+                    ></button>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

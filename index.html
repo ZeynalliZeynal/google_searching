@@ -22,11 +22,12 @@
     <script defer src="./app/js/main.js"></script>
   </head>
   <body
+    id="home"
     style="
       background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     "
   >
-    <header>
+    <header id="home-header">
       <nav>
         <div class="container-fluid">
           <div class="row justify-end">
@@ -77,32 +78,34 @@
                   style="mask-image: url('./app/assets/image/google_logo.svg')"
                 ></div>
               </div>
-              <form action="#" class="google__search-bar">
+              <form action="#" class="search-bar">
                 <span
-                  class="google__search-bar__search-icon"
+                  class="search-bar__search-icon"
                   style="mask-image: url('./app/assets/icon/icon_search.svg')"
                 ></span>
-                <span class="google__search-bar__input">
+                <span class="search-bar__input">
                   <input
                     type="search"
                     placeholder="Search Google or type a URL"
                   />
                 </span>
-                <ul class="google__search-bar__other-icons">
+                <ul class="search-bar__other-icons">
                   <li>
                     <button
-                      class="google__search-bar__other-icons__mic"
+                      class="search-bar__other-icons__mic"
                       style="
                         background-image: url('./app/assets/icon/googlemic.svg');
                       "
+                      title="Search by voice"
                     ></button>
                   </li>
                   <li>
                     <button
-                      class="google__search-bar__other-icons__lens"
+                      class="search-bar__other-icons__lens"
                       style="
                         background-image: url('./app/assets/icon/lens_icon.svg');
                       "
+                      title="Search by image"
                     ></button>
                   </li>
                 </ul>
