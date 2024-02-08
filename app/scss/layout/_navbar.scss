@@ -39,5 +39,37 @@ header {
     }
   }
   &#search-header {
+    .form-nav {
+      height: 70px;
+      &__left {
+        @include flexbox(center, flex-start, wrap, 2.8rem);
+        margin-left: 4rem;
+        &__logo {
+          width: 92px;
+          height: 30px;
+          background-color: white;
+          mask-size: 100%;
+          mask-repeat: no-repeat;
+        }
+        .search-bar {
+          background-color: $input-bg;
+          &:hover {
+            box-shadow: 0 4px 12px rgba(23, 23, 23, 0.9);
+          }
+          &__input input {
+            color: white;
+          }
+
+          &__other-icons {
+            &__search {
+              mask-size: 100%;
+              mask-repeat: no-repeat;
+              background-color: $icon-bg;
+              mask-position: center;
+            }
+          }
+        }
+      }
+    }
   }
 }

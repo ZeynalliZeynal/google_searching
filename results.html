@@ -21,22 +21,15 @@
     <header id="search-header">
       <nav class="form-nav">
         <div class="container-fluid">
-          <div class="row">
+          <div class="row h-100">
             <div class="form-nav__left">
               <div
                 class="form-nav__left__logo"
                 style="mask-image: url('./app/assets/image/google_logo.svg')"
               ></div>
               <form action="#" class="search-bar">
-                <span
-                  class="search-bar__search-icon"
-                  style="mask-image: url('./app/assets/icon/icon_search.svg')"
-                ></span>
                 <span class="search-bar__input">
-                  <input
-                    type="search"
-                    placeholder="Search Google or type a URL"
-                  />
+                  <input type="search" />
                 </span>
                 <ul class="search-bar__other-icons">
                   <li>
@@ -57,9 +50,19 @@
                       title="Search by image"
                     ></button>
                   </li>
+                  <li>
+                    <button
+                      class="search-bar__other-icons__search"
+                      style="
+                        mask-image: url('./app/assets/icon/search_blue.svg');
+                      "
+                      title="Search"
+                    ></button>
+                  </li>
                 </ul>
               </form>
             </div>
+            <div class="form-nav__right"></div>
           </div>
         </div>
       </nav>

@@ -1,6 +1,6 @@
 'use strict';
 
-const searchForm = document.querySelector('.google__search-bar');
+const searchForm = document.querySelector('.search-bar');
 const searchInput = document.querySelector('input[type="search"]');
 
 class Storage {

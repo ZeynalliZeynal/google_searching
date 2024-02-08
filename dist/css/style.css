@@ -563,6 +563,40 @@ header#home-header nav .banner__more__btn button span {
 header#home-header nav .banner__more__btn button:hover {
   background-color: rgba(255, 255, 255, 0.1019607843);
 }
+header#search-header .form-nav {
+  height: 70px;
+}
+header#search-header .form-nav__left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2.8rem;
+  margin-left: 4rem;
+}
+header#search-header .form-nav__left__logo {
+  width: 92px;
+  height: 30px;
+  background-color: white;
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+}
+header#search-header .form-nav__left .search-bar {
+  background-color: #303134;
+}
+header#search-header .form-nav__left .search-bar:hover {
+  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.9);
+}
+header#search-header .form-nav__left .search-bar__input input {
+  color: white;
+}
+header#search-header .form-nav__left .search-bar__other-icons__search {
+  mask-size: 100%;
+  mask-repeat: no-repeat;
+  background-color: #8ab4f8;
+  mask-position: center;
+}
+
 footer .customize-theme {
   padding: 1rem;
 }
