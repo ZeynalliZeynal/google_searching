@@ -4,4 +4,61 @@
 
 body#results {
   background: $page-bg;
+
+  #articles {
+    padding: 0;
+    .about-result {
+      padding: 10px 0;
+      color: $steel-blue;
+      font-size: 14px;
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+
+      &__card {
+        display: grid;
+        gap: 10px;
+
+        &__img {
+          background-color: #252629;
+          border-radius: 0.5rem;
+          padding: 15px;
+          transition: all 0.2s ease;
+          &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          }
+        }
+
+        &__info {
+          flex-direction: column;
+          align-items: flex-start;
+          &__title {
+            @include flexbox(center, center, wrap);
+            color: $silver-blue;
+            font-size: 12px;
+            gap: 0.6rem;
+
+            &__user-icon {
+              width: 16px;
+              height: 16px;
+            }
+            &__user-name:hover {
+              text-decoration: underline;
+            }
+          }
+          &__desc {
+            color: $silver;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 350px;
+          }
+        }
+      }
+    }
+  }
 }

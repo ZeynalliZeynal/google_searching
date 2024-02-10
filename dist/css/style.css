@@ -13,7 +13,7 @@
 
 .container-fluid {
   max-width: 100%;
-  padding: 0;
+  padding: 0 15px;
 }
 
 .row {
@@ -755,6 +755,60 @@ body#home {
 
 body#results {
   background: #202124;
+}
+body#results #articles {
+  padding: 0;
+}
+body#results #articles .about-result {
+  padding: 10px 0;
+  color: #9aa0a6;
+  font-size: 14px;
+}
+body#results #articles .cards-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+body#results #articles .cards-container__card {
+  display: grid;
+  gap: 10px;
+}
+body#results #articles .cards-container__card__img {
+  background-color: #252629;
+  border-radius: 0.5rem;
+  padding: 15px;
+  transition: all 0.2s ease;
+}
+body#results #articles .cards-container__card__img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+body#results #articles .cards-container__card__info {
+  flex-direction: column;
+  align-items: flex-start;
+}
+body#results #articles .cards-container__card__info__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #aaadb2;
+  font-size: 12px;
+  gap: 0.6rem;
+}
+body#results #articles .cards-container__card__info__title__user-icon {
+  width: 16px;
+  height: 16px;
+}
+body#results #articles .cards-container__card__info__title__user-name:hover {
+  text-decoration: underline;
+}
+body#results #articles .cards-container__card__info__desc {
+  color: #bdc1c6;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 350px;
 }
 
 /*# sourceMappingURL=style.css.map */
