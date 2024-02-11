@@ -533,30 +533,41 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .loading,
-.loading * {
+.loading *,
+.not-found,
+.not-found * {
   position: fixed;
   inset: 0;
 }
 
-.loading {
+.loading,
+.not-found {
   visibility: hidden;
   opacity: 0;
   z-index: -1 !important;
   transition: all 0.15s ease;
 }
-.loading.active {
+.loading.active,
+.not-found.active {
   visibility: visible;
   opacity: 1;
   z-index: 990;
 }
-.loading .loading-gif {
+.loading .loading-gif,
+.loading .not-found-gif,
+.not-found .loading-gif,
+.not-found .not-found-gif {
   z-index: 999;
   transform: scale(0.4);
 }
-.loading .loading-gif img {
+.loading .loading-gif img,
+.loading .not-found-gif img,
+.not-found .loading-gif img,
+.not-found .not-found-gif img {
   object-fit: contain;
 }
-.loading .overlay {
+.loading .overlay,
+.not-found .overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.233);

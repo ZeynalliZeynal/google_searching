@@ -3,10 +3,13 @@
 @use '../utils/extend' as *;
 
 .loading,
-.loading * {
+.loading *,
+.not-found,
+.not-found * {
   @include position(fixed, 0);
 }
-.loading {
+.loading,
+.not-found {
   visibility: hidden;
   opacity: 0;
   z-index: -1 !important;
@@ -18,7 +21,8 @@
     z-index: 990;
   }
 
-  .loading-gif {
+  .loading-gif,
+  .not-found-gif {
     z-index: 999;
     transform: scale(0.4);
 

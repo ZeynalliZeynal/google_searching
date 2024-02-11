@@ -5,6 +5,7 @@ const searchInputEl = document.querySelector('.search-bar__input input');
 const resultAmount = document.querySelector('.about-result');
 const searchBar = document.querySelector('.search-bar');
 const loadingGif = document.querySelector('.loading');
+const notFoundGif = document.querySelector('.not-found');
 
 let globalData = [];
 
@@ -14,7 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.title = inputValue + ' - Google Search';
 
   displayData(inputValue);
-  searchBar.addEventListener('submit', () => displayData(searchInputEl.value));
+  searchBar.addEventListener('submit', (event) => {
+    event.preventDefault();
+    displayData(searchInputEl.value);
+    document.title = searchInputEl.value + ' - Google Search';
+  });
+
   // getData().then((data) => {
   //   const dataHits = data.hits;
   //   globalData = [...dataHits];
@@ -31,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function displayData(searchInput) {
   try {
     loadingGif.classList.add('active');
+    notFoundGif.classList.remove('active');
 
     const startTime = performance.now();
 
@@ -55,33 +62,35 @@ async function displayData(searchInput) {
         userImageURL,
       } = item;
       const html = `
-          <div class="cards-container__card">
-              <a href=${pageURL} class="cards-container__card__img">
-                <img
-                  src=${largeImageURL}
-                  alt=${type}
-                />
-              </a>
-              <a href=${pageURL} class="cards-container__card__info">
-                <div class="cards-container__card__info__title">
-                  <span
-                    class="cards-container__card__info__title__user-icon"
-                  >
-                    <img
-                      src=${userImageURL}
-                      alt=${user}
-                    />
-                  </span>
-                  <span class="cards-container__card__info__title__user-name"
-                    >${user}</span
-                  >
-                </div>
-                <p class="cards-container__card__info__desc">${tags}</p>
-              </a>
-            </div>
-        `;
+            <div class="cards-container__card">
+                <a href=${pageURL} class="cards-container__card__img">
+                  <img
+                    src=${largeImageURL}
+                    alt=${type}
+                  />
+                </a>
+                <a href=${pageURL} class="cards-container__card__info">
+                  <div class="cards-container__card__info__title">
+                    <span
+                      class="cards-container__card__info__title__user-icon"
+                    >
+                      <img
+                        src=${userImageURL}
+                        alt=${user}
+                      />
+                    </span>
+                    <span class="cards-container__card__info__title__user-name"
+                      >${user}</span
+                    >
+                  </div>
+                  <p class="cards-container__card__info__desc">${tags}</p>
+                </a>
+              </div>
+          `;
       cardContainer.insertAdjacentHTML('afterbegin', html);
     });
+
+    if (data.hits.length === 0) notFoundGif.classList.add('active');
   } catch (error) {
     console.error(error);
   } finally {
