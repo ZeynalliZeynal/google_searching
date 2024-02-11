@@ -2,3 +2,19 @@
 @use './mixin' as *;
 @use './function' as *;
 @use './extend' as *;
+
+@media screen and (width < 576px) {
+  .form-nav {
+    .col-sm-9.col-lg-6 {
+      width: 100% !important;
+    }
+    .col-sm-3.col-lg-6 {
+      display: none !important;
+    }
+  }
+  .filter-nav {
+    .filter-nav__safe_search {
+      display: none !important;
+    }
+  }
+}

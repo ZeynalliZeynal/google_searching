@@ -18,6 +18,13 @@
   <link rel="stylesheet" href="./dist/css/style.css" />
   <script defer src="./app/js/results.js" type="module"></script>
   <body id="results">
+    <div class="loading">
+      <div class="loading-gif">
+        <img src="./app/assets/image/loading.gif" alt="" />
+      </div>
+      <div class="not-found"></div>
+      <div class="overlay"></div>
+    </div>
     <header id="search-header">
       <nav class="form-nav">
         <div class="container-fluid">
@@ -59,6 +66,7 @@
                           mask-image: url('./app/assets/icon/search_blue.svg');
                         "
                         title="Search"
+                        type="submit"
                       ></button>
                     </li>
                   </ul>
@@ -119,16 +127,8 @@
       </nav>
       <nav class="filter-nav">
         <div class="container-fluid">
-          <div class="row justify-between">
+          <div class="row justify-between nowrap">
             <ul class="filter-nav__basic">
-              <li>
-                <button class="filter-btn">
-                  <span class="filter-btn__icon"
-                    ><i class="bi bi-x-lg"></i
-                  ></span>
-                  <span>Images</span>
-                </button>
-              </li>
               <li>
                 <button class="filter-btn">
                   <span class="filter-btn__icon"
@@ -170,11 +170,7 @@
         <section id="articles">
           <div class="container-fluid">
             <div class="row">
-              <div class="about-result">
-                About
-                <span class="about-result__result-amount"> 0 </span>
-                results
-              </div>
+              <div class="about-result"></div>
             </div>
             <div class="row justify-center">
               <div class="cards-container"></div>

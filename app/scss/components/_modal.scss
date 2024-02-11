@@ -1,3 +1,35 @@
 @use '../utils/variable' as *;
 @use '../utils/mixin' as *;
 @use '../utils/extend' as *;
+
+.loading,
+.loading * {
+  @include position(fixed, 0);
+}
+.loading {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1 !important;
+
+  transition: all 0.15s ease;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 990;
+  }
+
+  .loading-gif {
+    z-index: 999;
+    transform: scale(0.4);
+
+    img {
+      object-fit: contain;
+    }
+  }
+  .overlay {
+    @include position(fixed, 0);
+    background-color: rgba(0, 0, 0, 0.233);
+    backdrop-filter: blur(10px);
+    z-index: 991;
+  }
+}
