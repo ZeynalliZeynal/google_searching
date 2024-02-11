@@ -3,12 +3,6 @@
 const searchForm = document.querySelector('.search-bar');
 const searchInput = document.querySelector('input[type="search"]');
 
-class Storage {
-  static saveVariable(param) {
-    localStorage.setItem('variables', JSON.stringify(param));
-  }
-}
-
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -16,7 +10,12 @@ searchForm.addEventListener('submit', (e) => {
   const variables = {
     inputValue: searchValue,
   };
-  Storage.saveVariable(variables);
+  saveVariable(variables);
 
   window.location.href = './../../results.html';
 });
+
+// Local Storage
+function saveVariable(param) {
+  localStorage.setItem('variables', JSON.stringify(param));
+}

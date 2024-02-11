@@ -3,7 +3,7 @@
 @use '../utils/extend' as *;
 
 .search-bar {
-  @include flexbox(center, space-between, wrap, 6px);
+  @include flexbox(center, space-between, nowrap, 6px);
   background-color: white;
   padding-inline: 20px;
   border-radius: 22px;
