@@ -765,11 +765,14 @@ body#results #articles .about-result {
   font-size: 14px;
 }
 body#results #articles .cards-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 body#results #articles .cards-container__card {
+  flex: calc(20% - 20px);
   display: grid;
   gap: 10px;
 }
