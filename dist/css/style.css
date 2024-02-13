@@ -575,6 +575,99 @@ input[type=search]::-webkit-search-results-decoration {
   z-index: 991;
 }
 
+dialog {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  background-color: #202124;
+  border: none;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.12), 0 16px 16px rgba(0, 0, 0, 0.24);
+}
+dialog.modal-active {
+  opacity: 1;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.google__tiles__modal > * {
+  width: 512px;
+}
+.google__tiles__modal__title {
+  padding: 20px 20px 16px;
+  color: #e4e2df;
+  font-size: 15px;
+}
+.google__tiles__modal__form {
+  padding: 0 20px;
+  color: #c8c6c3;
+  font-size: 11px;
+  display: grid;
+  gap: 1rem;
+}
+.google__tiles__modal__form__inputs {
+  display: grid;
+  gap: 4px;
+}
+.google__tiles__modal__form__inputs__input {
+  position: relative;
+  padding: 10px;
+  background-color: #474745;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.google__tiles__modal__form__inputs__input:hover {
+  background-color: rgb(90, 90, 90);
+}
+.google__tiles__modal__form__inputs__input::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #91918e;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.google__tiles__modal__form__inputs__input input {
+  color: #e4e2df;
+  font-size: 12px;
+}
+.google__tiles__modal__form__action-btns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+.google__tiles__modal__form__action-btns button {
+  font-size: 13px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #c8c6c3;
+  border-radius: 18px;
+}
+.google__tiles__modal__form__action-btns__cancel:hover {
+  background-color: #3d3d3f;
+}
+.google__tiles__modal__form__action-btns__done {
+  color: rgba(136, 148, 132, 0.3215686275);
+  border-color: #333331 !important;
+  background-color: #333331;
+  cursor: not-allowed;
+}
+.google__tiles__modal__form__action-btns__done.active-done {
+  background-color: #c8c6c3;
+  color: #202124;
+  cursor: pointer;
+}
+.google__tiles__modal__form__action-btns__done.active-done:hover {
+  opacity: 0.8;
+}
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -739,6 +832,9 @@ body#home {
   height: 100vh;
 }
 
+#google-home .google {
+  width: 560px;
+}
 #google-home .google__logo {
   margin-bottom: 2rem;
 }
@@ -751,14 +847,21 @@ body#home {
   margin: 0 auto;
 }
 #google-home .google__tiles {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, 112px);
-  justify-content: center;
+}
+#google-home .google__tiles__container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 #google-home .google__tiles__tile {
   position: relative;
-  width: 100%;
+  width: 112px;
   height: 112px;
   flex-direction: column;
   gap: 10px;

@@ -11,6 +11,7 @@ body#home {
 
 #google-home {
   .google {
+    width: 560px;
     &__logo {
       margin-bottom: 2rem;
       &__img {
@@ -24,14 +25,15 @@ body#home {
     }
 
     &__tiles {
+      @include flexbox(stretch, flex-start, wrap);
       margin-top: 1rem;
-      display: grid;
-      grid-template-columns: repeat(4, 112px);
-      justify-content: center;
+      &__container {
+        @include flexbox(stretch, space-between, wrap);
+      }
 
       &__tile {
         position: relative;
-        width: 100%;
+        width: 112px;
         height: 112px;
         flex-direction: column;
         gap: 10px;

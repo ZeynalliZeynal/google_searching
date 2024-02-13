@@ -114,48 +114,53 @@
                 </ul>
               </form>
               <div class="google__tiles">
-                <a href="#" class="google__tiles__tile">
-                  <div class="google__tiles__tile__icon">
-                    <img src="./app/assets/icon/youtube.png" alt="Youtube" />
-                  </div>
-                  <p class="google__tiles__tile__title">Youtube</p>
-                  <div class="google__tiles__tile__dots">
-                    <span class="google__tiles__tile__dots__icon">
-                      <i class="bi bi-three-dots-vertical"></i>
-                    </span>
-                  </div>
-                </a>
-                <a href="#" class="google__tiles__tile">
-                  <div class="google__tiles__tile__icon">
-                    <img
-                      src="./app/assets/icon/translate.png"
-                      alt="Translate"
-                    />
-                  </div>
-                  <p class="google__tiles__tile__title">Translate</p>
-                  <div class="google__tiles__tile__dots">
-                    <span class="google__tiles__tile__dots__icon">
-                      <i class="bi bi-three-dots-vertical"></i>
-                    </span>
-                  </div>
-                </a>
-                <a href="#" class="google__tiles__tile">
-                  <div class="google__tiles__tile__icon">
-                    <img src="./app/assets/icon/gmail.png" alt="Gmail" />
-                  </div>
-                  <p class="google__tiles__tile__title">Gmail</p>
-                  <div class="google__tiles__tile__dots">
-                    <span class="google__tiles__tile__dots__icon">
-                      <i class="bi bi-three-dots-vertical"></i>
-                    </span>
-                  </div>
-                </a>
-                <a href="#" class="google__tiles__tile add-shortcut">
+                <div class="google__tiles__container"></div>
+                <a
+                  href="#"
+                  class="google__tiles__tile add-shortcut"
+                  data-tile="add"
+                >
                   <div class="google__tiles__tile__icon">
                     <img src="./app/assets/icon/plus.png" alt="Add shortcut" />
                   </div>
                   <p class="google__tiles__tile__title">Add shortcut</p>
                 </a>
+                <dialog class="google__tiles__modal" data-tile-modal>
+                  <div class="google__tiles__modal__title">Add shortcut</div>
+                  <form action="#" class="google__tiles__modal__form">
+                    <div class="google__tiles__modal__form__inputs">
+                      <span class="google__tiles__modal__form__inputs__title">
+                        Name
+                      </span>
+                      <span class="google__tiles__modal__form__inputs__input">
+                        <input type="text" data-input="Name" />
+                      </span>
+                    </div>
+                    <div class="google__tiles__modal__form__inputs">
+                      <span class="google__tiles__modal__form__inputs__title">
+                        URL
+                      </span>
+                      <span class="google__tiles__modal__form__inputs__input">
+                        <input type="text" data-input="URL" required />
+                      </span>
+                    </div>
+                    <div class="google__tiles__modal__form__action-btns">
+                      <button
+                        class="google__tiles__modal__form__action-btns__cancel"
+                        type="button"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        class="google__tiles__modal__form__action-btns__done"
+                        disabled
+                      >
+                        Done
+                      </button>
+                    </div>
+                  </form>
+                </dialog>
               </div>
             </div>
           </div>

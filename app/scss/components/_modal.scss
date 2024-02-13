@@ -37,3 +37,101 @@
     z-index: 991;
   }
 }
+
+dialog {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &.modal-active {
+    opacity: 1;
+  }
+
+  border-radius: 6px;
+  background-color: $dialog-bg;
+  border: none;
+  box-shadow: $dialog-shadow;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+.google__tiles__modal {
+  & > * {
+    width: 512px;
+  }
+
+  &__title {
+    padding: 20px 20px 16px;
+    color: $silver-sand;
+    font-size: 15px;
+  }
+
+  &__form {
+    padding: 0 20px;
+    color: $light-taupe;
+    font-size: 11px;
+    display: grid;
+    gap: 1rem;
+
+    &__inputs {
+      display: grid;
+      gap: 4px;
+      &__input {
+        position: relative;
+        padding: 10px;
+        background-color: #474745ff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        &:hover {
+          background-color: rgb(90, 90, 90);
+        }
+
+        &::after {
+          @include before_after('', 100%, 2px, #91918eff);
+          @include position(absolute, $bottom: 0, $left: 0);
+        }
+
+        input {
+          color: $silver-sand;
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__action-btns {
+      @include flexbox(center, flex-end, nowrap, 0.5rem);
+
+      padding: 1rem;
+      width: 100%;
+
+      button {
+        font-size: 13px;
+        padding: 0.5rem 1rem;
+        border: 1px solid $light-taupe;
+        border-radius: 18px;
+      }
+
+      &__cancel:hover {
+        background-color: #3d3d3f;
+      }
+      &__done {
+        color: $btn-deactive;
+        border-color: $btn-deactive-bg !important;
+        background-color: $btn-deactive-bg;
+        cursor: not-allowed;
+        &.active-done {
+          background-color: $light-taupe;
+          color: $dialog-bg;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
