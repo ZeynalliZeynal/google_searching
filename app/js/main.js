@@ -58,7 +58,12 @@ tileModalForm.addEventListener('submit', (event) => {
   event.preventDefault();
   tilesArr.push({
     name: tileModalNameInput.value,
-    url: 'https://' + tileModalURLInput.value.toLowerCase(),
+    url:
+      `${
+        tileModalURLInput.value.toLowerCase().includes('https://')
+          ? ''
+          : 'https://'
+      }` + tileModalURLInput.value.toLowerCase(),
     imgURL: tileModalURLInput.value,
   });
   tileModal.close();
